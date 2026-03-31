@@ -5,16 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>张凯航 Zhang Kaihang | 卡通简历 🎨</title>
     <style>
-        /* --- 卡通风格变量 --- */
         :root {
-            --bg-color: #FFF9EB; /* 奶油黄背景 */
-            --primary: #4D96FF;  /* 亮蓝色 */
-            --secondary: #6BCB77; /* 草绿色 */
-            --accent: #FF6B6B;   /* 珊瑚粉 */
-            --yellow: #FFD93D;   /* 阳光黄 */
-            --text-main: #2D3436; /* 墨黑色 */
+            --bg-color: #FFF9EB; 
+            --primary: #4D96FF;  
+            --secondary: #6BCB77;
+            --accent: #FF6B6B;   
+            --yellow: #FFD93D;   
+            --text-main: #2D3436; 
             
-            /* 核心卡通描边与阴影 */
             --border: 3px solid #2D3436;
             --shadow: 6px 6px 0px #2D3436;
             --shadow-hover: 2px 2px 0px #2D3436;
@@ -22,7 +20,7 @@
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Nunito', 'PingFang SC', 'Comic Sans MS', sans-serif; }
         
-        /* 波点漫画背景 */
+       
         body { 
             background-color: var(--bg-color); 
             background-image: radial-gradient(#2D3436 1.5px, transparent 1.5px);
@@ -33,14 +31,13 @@
             overflow-x: hidden; 
         }
 
-        /* --- 趣味装饰物 --- */
+        
         .deco { position: fixed; z-index: -1; font-size: 4rem; opacity: 0.8; animation: float 6s ease-in-out infinite; }
         .deco-1 { top: 10%; left: 5%; animation-delay: 0s; }
         .deco-2 { bottom: 15%; right: 8%; font-size: 5rem; animation-delay: 2s; }
         .deco-3 { top: 40%; right: 20%; font-size: 3rem; animation-delay: 1s; }
         @keyframes float { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-20px) rotate(10deg); } }
 
-        /* --- 侧边导航栏 (贴纸风格) --- */
         nav {
             width: 280px; height: 100vh; background: #FFF; 
             border-right: var(--border); position: fixed; padding: 40px 20px;
@@ -62,9 +59,23 @@
         .nav-item:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0px #2D3436; background: #f1f2f6; }
         .nav-item.active { background: var(--yellow); transform: translate(4px, 4px); box-shadow: 0px 0px 0px #2D3436; }
 
-        /* --- Hire Me 趣味按钮 --- */
-        .hire-me-trigger {
+        /* top */
+        .top-actions {
             position: fixed; top: 30px; right: 30px; z-index: 500;
+            display: flex; gap: 20px; align-items: center;
+        }
+
+        
+        .download-trigger {
+            padding: 12px 30px; background: var(--secondary); color: var(--text-main); 
+            border-radius: 50px; font-weight: 900; font-size: 1.1rem; cursor: pointer;
+            border: var(--border); box-shadow: var(--shadow); text-decoration: none;
+            transition: all 0.2s; display: flex; align-items: center; justify-content: center;
+        }
+        .download-trigger:hover { transform: translate(4px, 4px); box-shadow: var(--shadow-hover); background: #58b663; }
+
+        
+        .hire-me-trigger {
             padding: 12px 30px; background: var(--accent); color: white; 
             border-radius: 50px; font-weight: 900; font-size: 1.1rem; cursor: pointer;
             border: var(--border); box-shadow: var(--shadow);
@@ -73,7 +84,7 @@
         .hire-me-trigger:hover { transform: translate(4px, 4px); box-shadow: var(--shadow-hover); animation: none; background: #ff4757; }
         @keyframes wobble { 0%, 100% { transform: rotate(-3deg); } 50% { transform: rotate(3deg); } }
 
-        /* 联系模态框 */
+        
         .contact-modal {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(45, 52, 54, 0.8); backdrop-filter: blur(5px);
@@ -91,16 +102,17 @@
             display: block; padding: 15px; margin: 15px 0; background: var(--bg-color); 
             border-radius: 15px; border: 2px solid var(--text-main); color: var(--text-main); 
             font-weight: 800; transition: 0.2s; box-shadow: 3px 3px 0px var(--text-main);
+            text-decoration: none; 
         }
         .contact-btn:hover { transform: translate(2px, 2px); box-shadow: 1px 1px 0px var(--text-main); background: var(--yellow); }
 
-        /* --- 内容区域 --- */
+        
         main { margin-left: 280px; width: calc(100% - 280px); padding: 60px 80px; }
         .section { display: none; animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
         .section.active { display: block; }
         @keyframes popIn { from { opacity: 0; transform: scale(0.9) translateY(20px); } to { opacity: 1; transform: scale(1) translateY(0); } }
 
-        /* 卡通卡片基础 */
+        
         .card { 
             background: white; border-radius: 20px; padding: 35px; 
             margin-bottom: 30px; border: var(--border); box-shadow: var(--shadow); 
@@ -108,7 +120,7 @@
         }
         .card:hover { transform: translate(2px, 2px); box-shadow: var(--shadow-hover); }
         
-        /* 标签贴纸 */
+        
         .badge { 
             display: inline-block; padding: 6px 15px; background: var(--yellow); 
             color: var(--text-main); border-radius: 12px; font-size: 0.9rem; 
@@ -116,7 +128,7 @@
             box-shadow: 2px 2px 0px var(--text-main);
         }
 
-        /* --- 个人简介特调 --- */
+        
         .avatar-box {
             width: 150px; height: 150px; background: var(--primary); border-radius: 30px; 
             border: var(--border); box-shadow: var(--shadow); overflow: hidden; 
@@ -127,7 +139,7 @@
         
         .hero-title { font-size: 3.5rem; font-weight: 900; letter-spacing: -1px; text-shadow: 4px 4px 0px white, 6px 6px 0px var(--text-main); }
         
-        /* 气泡对话框风格 */
+        
         .speech-bubble {
             background: white; border: var(--border); border-radius: 20px; 
             padding: 25px; position: relative; font-size: 1.1rem; font-weight: 700; 
@@ -144,10 +156,10 @@
             border-color: transparent transparent white transparent;
         }
 
-        /* --- 重点保留：淡蓝色长方形按钮 (卡通化改造) --- */
+       
         .highlight-cards { display: flex; flex-direction: column; gap: 20px; margin-top: 30px; }
         .highlight-card {
-            background: #EAF4FC; /* 要求的淡蓝色 */
+            background: #EAF4FC;
             border-radius: 20px; padding: 20px 30px; display: flex; align-items: center; gap: 20px;
             border: var(--border); box-shadow: var(--shadow);
             transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -161,7 +173,6 @@
         }
         .hc-desc { color: var(--text-main); font-size: 1rem; font-weight: 700; line-height: 1.5; }
 
-        /* --- 课程卡片 3D 翻转 (游戏卡牌风格) --- */
         .course-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; }
         .course-card { height: 160px; perspective: 1000px; cursor: pointer; }
         .course-inner { position: relative; width: 100%; height: 100%; transition: 0.6s; transform-style: preserve-3d; }
@@ -176,7 +187,6 @@
         .course-back { background: var(--secondary); color: var(--text-main); transform: rotateY(180deg); font-size: 0.95rem; font-weight: 800; line-height: 1.5; }
         .grade { position: absolute; top: 15px; right: 15px; font-weight: 900; background: var(--yellow); padding: 4px 10px; border-radius: 10px; border: 2px solid var(--text-main); }
 
-        /* --- 响应式 --- */
         @media (max-width: 900px) {
             nav { width: 100%; height: auto; bottom: 0; top: auto; flex-direction: row; padding: 15px; justify-content: space-around; border-right: none; border-top: var(--border); z-index: 1000;}
             .nav-logo { display: none; }
@@ -184,7 +194,8 @@
             main { margin-left: 0; width: 100%; padding: 30px 20px 100px; }
             .course-grid { grid-template-columns: 1fr; }
             .highlight-card { flex-direction: column; align-items: flex-start; gap: 15px; }
-            .deco { display: none; } /* 手机端隐藏背景装饰防遮挡 */
+            .deco { display: none; } 
+            .top-actions { top: 15px; right: 15px; transform: scale(0.85); transform-origin: top right; } /* 移动端适配 */
         }
     </style>
 </head>
@@ -194,7 +205,10 @@
     <div class="deco deco-2">🚀</div>
     <div class="deco deco-3">💡</div>
 
-    <div class="hire-me-trigger" onclick="toggleModal()">👋 Hire Me!</div>
+    <div class="top-actions">
+        <a href="Zhang Kaihang张凯航.docx" download="Zhang Kaihang张凯航.docx" class="download-trigger">📄 下载简历</a>
+        <div class="hire-me-trigger" onclick="toggleModal()">👋 Hire Me!</div>
+    </div>
 
     <div class="contact-modal" id="contactModal" onclick="toggleModal()">
         <div class="modal-card" onclick="event.stopPropagation()">
@@ -202,7 +216,7 @@
             <p style="color: #636E72; font-weight: 700; margin-bottom: 30px;">期待与您沟通技术合作与机遇 ✨</p>
             <div class="contact-btn">💬 微信: Shinozukahiroto</div>
             <div class="contact-btn">📱 电话: 15588666059</div>
-            <div class="contact-btn">📧 邮箱: tanimoto123@qq.com</div>
+            <a href="mailto:tanimoto123@qq.com" class="contact-btn">📧 邮箱: tanimoto123@qq.com</a>
             <button onclick="toggleModal()" style="margin-top: 20px; background: var(--accent); color: white; border: var(--border); padding: 10px 30px; border-radius: 15px; font-weight: 900; cursor: pointer; box-shadow: 3px 3px 0px var(--text-main);">❌ 关闭</button>
         </div>
     </div>
@@ -373,7 +387,6 @@
             document.getElementById('contactModal').classList.toggle('active');
         }
 
-        // 头像加载逻辑
         function loadAvatar() {
             const box = document.getElementById('avatarBox');
             const paths = ['avatar.png', 'avatar.jpg', 'avatar.jpeg'];
